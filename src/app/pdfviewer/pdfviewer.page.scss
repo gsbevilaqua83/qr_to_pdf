@@ -1,0 +1,24 @@
+
+#pdf-viewer{
+    display: block;
+    height: 100%
+}
+
+.pdf-div {
+    height: 100vh;
+    overflow: auto;
+    background: white;
+}
+
+ion-header {
+    background: antiquewhite;
+}
+
+.toolbar-content {
+    display: flex;
+    flex: 0 0 0% !important;
+}
+
+ion-button {
+    margin-right: 1em;
+}

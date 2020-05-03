@@ -1,6 +1,9 @@
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+// import { File } from '@ionic-native/file/ngx';
+// import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -16,7 +19,10 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    QRScanner,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    // File,
+    // DocumentViewer,
   ],
   bootstrap: [AppComponent]
 })

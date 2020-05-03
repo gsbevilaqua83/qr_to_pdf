@@ -1,20 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content id="home-page">
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>
+        QR to PDF
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-content id="home-content">
+    <div class="ion-padding">
+      <ion-button (click)="changePage('qrcam')" expand="full" color="danger">Start Scanning</ion-button>
+      <ion-button (click)="decaptate()" expand="full" color="secondary">Disapear Header</ion-button>
+      <ion-button (click)="changePage('pdfolder')" expand="full" color="primary">Open Archive</ion-button>
+    </div>
+  </ion-content>
 </ion-content>

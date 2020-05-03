@@ -1,0 +1,18 @@
+<ion-header>
+  <div style="display: flex; padding: 1em;">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Viewer</ion-title>
+    <ion-button (click)="zoom_in()">zoom in</ion-button>
+    <ion-button (click)="zoom_out()">zoom out</ion-button>
+  </div>
+</ion-header>
+
+<div class="pdf-div">
+  <pdf-viewer id="pdf-viewer" [src]="pdfSrc" 
+            [render-text]="false"
+            [original-size]="false"
+            [zoom]="zoom_to"
+  ></pdf-viewer>
+</div>
