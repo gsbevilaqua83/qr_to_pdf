@@ -9,6 +9,7 @@ import { PdfviewerPageRoutingModule } from './pdfviewer-routing.module';
 import { PdfviewerPage } from './pdfviewer.page';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import {PinchZoomModule} from 'ngx-pinch-zoom';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     IonicModule,
     PdfviewerPageRoutingModule,
     PdfViewerModule,
+    PinchZoomModule,
   ],
   declarations: [PdfviewerPage]
 })

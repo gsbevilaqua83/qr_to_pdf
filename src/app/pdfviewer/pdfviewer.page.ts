@@ -32,19 +32,6 @@ export class PdfviewerPage implements OnInit {
     this.backButtonSub.unsubscribe();
   }
 
-  zoom_in() {
-    this.zoom_to = this.zoom_to + 0.1;
-      document.getElementById("pdf-viewer").style.display = "block";
-      document.getElementById("pdf-viewer").style.visibility = "visible";
-      document.getElementById("pdf-viewer").style.opacity = "1"; 
-  }
-
-  zoom_out() {
-    if (this.zoom_to > 1) {
-       this.zoom_to = this.zoom_to - 0.1;
-    }
-  }
-
   ngOnInit() {
   }
 }
