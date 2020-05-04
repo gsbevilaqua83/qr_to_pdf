@@ -36,17 +36,6 @@ export class HomePage {
     this.backButtonSub.unsubscribe();
   }
 
-  decaptate(){
-    const vis = document.getElementsByTagName("ion-header")[0].style.visibility
-    if(vis === "hidden"){
-      document.getElementsByTagName("ion-header")[0].style.visibility = "visible"
-      document.getElementsByTagName("ion-header")[0].style.opacity = "1";
-    }else{
-      document.getElementsByTagName("ion-header")[0].style.visibility = "hidden";
-      document.getElementsByTagName("ion-header")[0].style.opacity = "0";
-    }
-  }
-
   changePage(page){
     this.router.navigate([page]);
   }

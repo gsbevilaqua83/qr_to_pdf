@@ -1,18 +1,28 @@
-<ion-header>
-  <div style="display: flex; padding: 1em;">
+<ion-header id="outer-header">
+  <div class="header-div">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Viewer</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="annotate-but" (click)="annotateModeOn()">
+        T
+        <!-- <ion-icon name="md-text"></ion-icon> -->
+      </ion-button>
+    </ion-buttons>
   </div>
 </ion-header>
 
-<div class="pdf-div">
+<ion-content (click)="handleClick($event)" [scrollEvents]="true" (ionScroll)="setScroll($event)" id="pdf-div">
   <pinch-zoom>
     <pdf-viewer id="pdf-viewer" [src]="pdfSrc" 
               [render-text]="false"
               [original-size]="false"
-              [zoom]="zoom_to"
+              [zoom]="1"
     ></pdf-viewer>
   </pinch-zoom>
+</ion-content>
+
+<div class="annotations">
+  <p  *ngFor="let annotation of annotations;" [style.position]="'absolute'" [style.top]="(annotation[1] - currentScroll) + 'px'" [style.left]="annotation[2] + 'px'">{{annotation[0]}}</p>
 </div>
