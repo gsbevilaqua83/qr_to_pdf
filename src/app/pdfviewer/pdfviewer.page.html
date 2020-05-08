@@ -5,6 +5,9 @@
     </ion-buttons>
     <ion-title>Viewer</ion-title>
     <ion-buttons slot="end">
+      <ion-button class="annotate-but" (click)="toggleNotes()">
+        {{showHide}}
+      </ion-button>
       <ion-button class="annotate-but" (click)="annotateModeOn()">
         T
         <!-- <ion-icon name="md-text"></ion-icon> -->
@@ -14,7 +17,7 @@
 </ion-header>
 
 <ion-content (click)="handleClick($event)" [scrollEvents]="true" (ionScroll)="setScroll($event)" id="pdf-div">
-  <pinch-zoom>
+  <pinch-zoom #myPinch="pinchZoom">
     <pdf-viewer id="pdf-viewer" [src]="pdfSrc" 
               [render-text]="false"
               [original-size]="false"
@@ -23,6 +26,6 @@
   </pinch-zoom>
 </ion-content>
 
-<div class="annotations">
-  <p  *ngFor="let annotation of annotations;" [style.position]="'absolute'" [style.top]="(annotation[1] - currentScroll) + 'px'" [style.left]="annotation[2] + 'px'">{{annotation[0]}}</p>
+<div class="annotations" *ngIf="showHide === 'H'">
+  <p (click)="removeNote($event)" *ngFor="let annotation of annotations;" [style.fontSize]="2/myPinch.scale + 'rem'" [style.position]="'absolute'" [style.top]="(annotation[1] - currentScroll + myPinch.pinchZoom.moveY) + 'px'" [style.left]="(annotation[2] + myPinch.pinchZoom.moveX) + 'px'">{{annotation[0]}}</p>
 </div>
